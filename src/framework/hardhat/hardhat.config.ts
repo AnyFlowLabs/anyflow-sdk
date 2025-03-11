@@ -6,6 +6,9 @@ dotenv.config()
 // Define default supported chains. (Note: these are only used if the API call fails)
 export const SUPPORTED_CHAINS = [11155111, 80002, 43113, 97, 421614, 4002, 84532, 11155420, 1313161555, 300, 338, 51, 50, 10200];
 
+// Temp: Add Tenderly Virtual Testnet
+SUPPORTED_CHAINS.push(696969)
+
 // Proxy addresses
 // Note: we use these addresses only as proxies, so there's no risk of it being public
 // for more information visit: https://docs.anyflow.pro/docs/how_it_works
