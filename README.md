@@ -20,19 +20,20 @@ npm install anyflow-sdk
 ### Basic Setup
 
 ```typescript
+/**
+ * Basic usage example for AnyFlow SDK inside a hardhat project
+ */
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
 import anyflow from 'anyflow-sdk';
 
-// Initialize the SDK with default options
-const anyflow = anyflow.setup();
+anyflow.setup();
 
-// Or with custom options
-const anyflowCustom = anyflow.setup({
-  enableEthersExtensions: true,
-  logLevel: 'debug',
-  cliConfig: {
-    // Custom CLI configuration
-  }
-});
+const config: HardhatUserConfig = {
+    solidity: "0.8.28",
+};
+
+export default anyflow.mergeHardhatConfig(config);
 ```
 
 
