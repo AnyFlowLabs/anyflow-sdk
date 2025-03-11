@@ -1,5 +1,5 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
+const config = {
     preset: 'ts-jest',
     testEnvironment: 'node',
     testMatch: ['**/__tests__/**/*.test.ts'],
@@ -11,6 +11,13 @@ module.exports = {
     transform: {
         '^.+\\.tsx?$': ['ts-jest', {
             tsconfig: 'tsconfig.json',
+            useESM: true,
         }],
     },
-}; 
+    extensionsToTreatAsEsm: ['.ts'],
+    moduleNameMapper: {
+        '^(\\.{1,2}/.*)\\.js$': '$1',
+    },
+};
+
+export default config; 

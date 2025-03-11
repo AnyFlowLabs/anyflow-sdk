@@ -4,7 +4,6 @@
     "description": "SDK for extending functionality of user projects and providing dependencies for anyflow CLI",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "type": "module",
     "files": [
         "dist"
     ],
@@ -14,6 +13,7 @@
         "prebuild": "npm run clean",
         "prepare": "npm run build",
         "test": "jest",
+        "test:watch": "jest --watch",
         "lint": "eslint src --ext .ts",
         "prepublishOnly": "npm run lint && npm run test",
         "preversion": "npm run lint",

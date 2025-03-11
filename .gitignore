@@ -39,7 +39,7 @@ coverage
 
 # Editor directories and files
 .idea/
-.vscode/
+# .vscode/ - We want to track VS Code configuration
 *.swp
 *.swo
 .DS_Store 

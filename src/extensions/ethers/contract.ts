@@ -18,22 +18,24 @@ export const contractExtensions = {
 
         try {
             // Check if the project is using the ethers library
-            const isEthersAvailable = (() => {
+            const ethersPath = (() => {
                 try {
-                    require.resolve('ethers');
-                    return true;
-                } catch (error) {
+                    // First try to resolve the package from the user's project path
+                    const userProjectPath = process.cwd();
+                    return require.resolve('ethers', { paths: [userProjectPath] });
+                } catch (error: any) {
+                    logger.error('Ethers library not found', error?.message);
                     return false;
                 }
             })();
 
-            if (!isEthersAvailable) {
+            if (!ethersPath) {
                 logger.info('Ethers library not found, skipping contract deployment extensions');
                 return;
             }
 
             // Import ethers dynamically since we've confirmed it exists
-            const { BaseContract, ContractFactory } = require('ethers');
+            const { BaseContract, ContractFactory } = require(ethersPath);
 
             // Store the original deploy method
             const originalDeploy = ContractFactory.prototype.deploy;

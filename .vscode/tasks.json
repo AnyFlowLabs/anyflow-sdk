@@ -1,0 +1,60 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "npm",
+            "script": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$tsc"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Clean",
+            "type": "npm",
+            "script": "clean",
+            "problemMatcher": []
+        },
+        {
+            "label": "Lint",
+            "type": "npm",
+            "script": "lint",
+            "problemMatcher": ["$eslint-stylish"]
+        },
+        {
+            "label": "Test",
+            "type": "npm",
+            "script": "test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": ["$jest"]
+        },
+        {
+            "label": "Test Watch",
+            "type": "npm",
+            "script": "test:watch",
+            "group": "test",
+            "isBackground": true,
+            "problemMatcher": ["$jest"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": false
+            }
+        },
+        {
+            "label": "Build & Test",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Build", "Test"],
+            "problemMatcher": []
+        }
+    ]
+} 

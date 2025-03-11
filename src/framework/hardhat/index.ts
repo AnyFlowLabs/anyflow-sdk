@@ -68,6 +68,3 @@ export function getHardhatConfig(): HardhatUserConfig {
 export function mergeHardhatConfig(config: HardhatUserConfig): HardhatUserConfig {
     return deepMerge({} as HardhatUserConfig, AnyflowHardhatConfig, config);
 }
-
-const result = deepMerge({ networks: [{ a: 1, b: 2 }, { a: 3, b: 4 }] }, { networks: [{ a: 5, b: 6 }] })
-console.log(result)
