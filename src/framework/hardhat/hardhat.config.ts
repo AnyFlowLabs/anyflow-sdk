@@ -6,7 +6,7 @@ dotenv.config();
 // Define default supported chains. (Note: these are only used if the API call fails)
 export const SUPPORTED_CHAINS = [
   11155111, 80002, 43113, 97, 421614, 4002, 84532, 11155420, 1313161555, 300,
-  338, 51, 50, 10200,
+  338, 51, 50, 10200, 59141
 ];
 
 // Temp: Add Tenderly Virtual Testnet
